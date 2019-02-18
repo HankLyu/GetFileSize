@@ -18,7 +18,8 @@ public class GetFileSize {
 
     public static void main(String[] args) {
         if (args.length < 1) {
-            Logger.getLogger("Need to give url args");
+            Logger.getLogger(GetFileSize.class.getName()).log(Level.SEVERE, "Need to give url args");
+            return ;
         }
         try {
             URL url = new URL(args[0]);
