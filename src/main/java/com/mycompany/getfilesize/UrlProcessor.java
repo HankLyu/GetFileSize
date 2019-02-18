@@ -15,11 +15,11 @@ import java.util.logging.Logger;
  *
  * @author hank
  */
-public class UrlProcesser {
+public class UrlProcessor {
 
     private URL url;
 
-    public UrlProcesser(URL url) {
+    public UrlProcessor(URL url) {
         this.url = url;
     }
 
@@ -37,7 +37,7 @@ public class UrlProcesser {
                 sum += len;
             }
         } catch (IOException ex) {
-            Logger.getLogger(UrlProcesser.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(UrlProcessor.class.getName()).log(Level.SEVERE, null, ex);
         }
         return sum;
     }

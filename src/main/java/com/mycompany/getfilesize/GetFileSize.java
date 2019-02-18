@@ -15,7 +15,7 @@ import java.io.*;
 public class GetFileSize {
 
     public static void main(String[] args) throws Exception {
-        UrlProcesser process = new UrlProcesser(
+        UrlProcessor process = new UrlProcessor(
                 new URL("https://3.bp.blogspot.com/-zNytxD3egzw/XGUro1yx2SI/AAAAAAAA1FY/yn0u0u3CMY8gACKxonANK8UYkqH6gGk-QCLcBGAs/s1600/01_valentine.jpg"));
         System.out.println("Target url size" + process.calculateSize());
     }
