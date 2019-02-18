@@ -7,6 +7,8 @@ package com.mycompany.getfilesize;
 
 import java.net.*;
 import java.io.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -14,9 +16,17 @@ import java.io.*;
  */
 public class GetFileSize {
 
-    public static void main(String[] args) throws Exception {
-        UrlProcessor process = new UrlProcessor(
-                new URL("https://3.bp.blogspot.com/-zNytxD3egzw/XGUro1yx2SI/AAAAAAAA1FY/yn0u0u3CMY8gACKxonANK8UYkqH6gGk-QCLcBGAs/s1600/01_valentine.jpg"));
-        System.out.println("Target url size" + process.calculateSize());
+    public static void main(String[] args) {
+        if (args.length < 1) {
+            Logger.getLogger("Need to give url args");
+        }
+        try {
+            URL url = new URL(args[0]);
+            UrlProcessor process = new UrlProcessor(url);
+            System.out.println("Target url size " + process.calculateSize());
+        } catch (MalformedURLException ex) {
+            Logger.getLogger(GetFileSize.class.getName()).log(Level.SEVERE, "Can't found url", ex);
+        }
+
     }
 }
